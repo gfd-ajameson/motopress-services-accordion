@@ -1,0 +1,456 @@
+/*
+Theme Name: Themify Ultra Child
+Description: Child theme for Themify Ultra with a MotoPress Appointment services accordion
+Author: Andrew Jameson - Grey Fox Digital
+Template: themify-ultra
+Text Domain: tpp
+*/
+
+:root {
+    --blue-primary: #051b68;
+    --blue-dark: #051b68;
+    --blue-light: #5cbfef;
+    --teal-dark: #1A4D5C;
+    --teal-medium: #2D6A6A;
+    --teal-light: #3A8585;
+    --gold: #C9A962;
+    --gold-light: #DFC078;
+    --cream: #FAF8F5;
+    --cream-dark: #F0EBE3;
+    --charcoal: #2C2C2C;
+    --charcoal-light: #5A5A5A;
+}
+
+body {
+	font-family: 'Montserrat', sans-serif;
+}
+
+a {
+	-webkit-transition: background-color 0.3s ease-in-out; /* Old Safari/Chrome */
+	-moz-transition: background-color 0.3s ease-in-out;    /* Old Firefox */
+	-o-transition: background-color 0.3s ease-in-out;      /* Old Opera */
+	transition: background-color 0.3s ease-in-out;
+}
+
+a:focus, button:focus, .themify_builder module:hover, .tb_link_outline:hover {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.fixed-header img {
+	width: 100px;
+	height: 100px;
+}
+
+#menu-main-navigation .menu-item:last-child a {
+	border: 2px solid #c9a962;
+}
+
+.menu-module-burger {
+	width: unset;
+}
+.tf_close:after, .tf_close:before {
+	width: 2px;
+}
+
+body.transparent-header #tbp_header:has(.tb_sticky_scroll_active) {
+	position: fixed;
+}
+
+.container-subrow {
+	max-width: 1400px;
+	width: 100%;
+	margin: 0 auto;
+}
+
+.tb_text_wrap ul {
+	list-style: disc;
+	padding-left: 15px;
+	margin-left: 10px;
+}
+
+.container-project {
+	background: linear-gradient(135deg, var(--blue-primary) 0%, var(--teal-dark) 100%);
+	position: relative;
+}
+
+.container-project2 {
+	inear-gradient(135deg, var(--blue-primary) 0%, var(--teal-dark) 100%);
+    background-image: linear-gradient(135deg, rgb(54, 169, 225) 0%, rgb(26, 77, 92) 100%);
+    background-position-x: initial;
+    background-position-y: initial;
+    background-size: initial;
+    background-repeat: initial;
+    background-attachment: initial;
+    background-origin: initial;
+    background-clip: initial;
+    background-color: initial;
+    position: relative;
+    overflow: hidden;
+}
+
+.stat-number {
+	display: contents;
+	font-family: 'Cormorant Garamond', serif;
+	font-size: 2.5rem;
+	color: #051b68;
+	font-weight: 500;
+}
+
+.hero-bg:after {
+	content: '';
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 55%;
+	height: 100%;
+	background: linear-gradient(135deg, var(--blue-primary) 0%, var(--teal-dark) 50%, var(--teal-medium) 100%);
+	clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%);
+	z-index: -1;
+}
+
+.sub-text {
+	display: block;
+	margin: 0 auto;
+}
+
+.sub-text.checks ul {
+	list-style: none;
+}
+
+.service-card {
+	transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.module-post-content .more-link-wrap {
+	position: absolute;
+	right: 0;
+	transform: translateY(-200%);
+	height: 100%;
+	text-align: right;
+}
+
+.module-post-title h3 {
+	margin-bottom: 0px;
+}
+
+.loops-wrapper.list-post>.post.mpa_service {
+	margin: 0 0 15px;
+}
+
+.ui.minimal>.tab-nav {
+	border-bottom: 2px solid #f1a3a3;
+}
+
+.ui.minimal>.tab-nav li a {
+	padding: 0.7rem 2rem;
+}
+
+.block-blur {
+	background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    padding: 30px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.service-card {
+	padding: 40px;
+    transform-origin: 0 0;
+    transform: translateY(-8px);
+    border-radius: 8px;
+    border: 1px solid #c9a962;
+}
+
+.service-card:hover {
+	border-radius: 8px;
+    border: 1px solid #c9a962;
+    box-shadow: 0 20px 60px 0 #c9a962;
+}
+
+.wpcf7-form {
+	display: flex;
+}
+
+/* PART 1 - Before Lazy Load */
+img[data-lazyloaded]{
+    opacity: 0;
+}
+
+/* PART 2 - Upon Lazy Load */
+img.litespeed-loaded{
+    -webkit-transition: opacity .5s linear 0.2s;
+    -moz-transition: opacity .5s linear 0.2s;
+    transition: opacity .5s linear 0.2s;
+    opacity: 1;
+}
+
+/* TPP Accordion */
+.tpp-accordion-item {
+	list-style: none;
+	background: var(--cream, #FAF8F5);
+	border: 1px solid var(--cream-dark, #F0EBE3);
+	border-radius: 10px;
+	margin-bottom: 14px;
+	overflow: hidden;
+}
+
+.mpa-services-list-shortcode .mpa-grid {
+	margin-right: unset;
+	margin-left: unset;
+}
+
+.tpp-accordion-wrapper .post-thumbnail,
+.tpp-accordion-wrapper .entry-title,
+.tpp-accordion-wrapper .entry-content,
+.tpp-accordion-wrapper .mpa-attributes,
+.tpp-accordion-wrapper .mpa-service-price {
+	margin: 0;
+}
+
+.tpp-accordion-header {
+	display: flex;
+	align-items: center;
+	gap: 30px;
+	padding: 14px 20px;
+	cursor: pointer;
+	user-select: none;
+}
+
+.tpp-accordion-header .post-thumbnail {
+	flex: 0 0 auto;
+}
+
+.tpp-accordion-header .post-thumbnail img {
+	width: 160px;
+	height: 160px;
+	border-radius: 10px;
+	object-fit: cover;
+	display: block;
+}
+
+.tpp-accordion-header .entry-title {
+	flex: 1 1 auto;
+	font-family: 'Cormorant Garamond', serif;
+	font-size: 2.5rem;
+	font-weight: 500;
+	color: var(--charcoal, #2C2C2C);
+	line-height: 1.2;
+}
+
+.tpp-accordion-header .entry-title a {
+	color: inherit;
+	text-decoration: none;
+}
+
+.tpp-accordion-header:hover .entry-title a {
+	color: var(--teal-dark, #1A4D5C);
+}
+
+/* Plus / minus icon */
+.tpp-accordion-icon {
+	position: relative;
+	flex: 0 0 32px;
+	width: 32px;
+	height: 32px;
+	border-radius: 50%;
+	border: 1px solid var(--gold, #C9A962);
+	transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.tpp-accordion-icon::before,
+.tpp-accordion-icon::after {
+	content: '';
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	background: var(--blue-primary, #051b68);
+	transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.tpp-accordion-icon::before {
+	width: 14px;
+	height: 2px;
+	transform: translate(-50%, -50%);
+}
+
+.tpp-accordion-icon::after {
+	width: 2px;
+	height: 14px;
+	transform: translate(-50%, -50%);
+}
+
+.tpp-accordion-header[aria-expanded="true"] .tpp-accordion-icon {
+	background: var(--gold, #C9A962);
+	border-color: var(--gold, #C9A962);
+}
+
+.tpp-accordion-header[aria-expanded="true"] .tpp-accordion-icon::before,
+.tpp-accordion-header[aria-expanded="true"] .tpp-accordion-icon::after {
+	background: white;
+}
+
+.tpp-accordion-header[aria-expanded="true"] .tpp-accordion-icon::after {
+	opacity: 0;
+	transform: translate(-50%, -50%) rotate(90deg);
+}
+
+/* Collapsible panel */
+.tpp-accordion-panel {
+	padding: 0 20px 0 230px;
+	font-family: 'Montserrat', sans-serif;
+	color: var(--charcoal-light, #5A5A5A);
+	text-transform: none;
+	max-height: 0;
+	overflow: hidden;
+	transition: max-height 0.4s ease, padding 0.4s ease;
+}
+
+.tpp-accordion-panel[hidden] {
+	display: block; /* let JS control visibility via max-height, not the hidden attribute's display:none */
+}
+
+.tpp-accordion-panel.is-open {
+	max-height: none; /* JS sets an explicit px value during the transition; see script */
+	padding-bottom: 20px;
+}
+
+.tpp-accordion-panel .mpa-attributes {
+	list-style: none;
+	margin: 16px 0 0;
+	padding: 0;
+}
+
+.tpp-accordion-panel .mpa-attributes li {
+	margin: 0;
+	padding: 0;
+	display: flex;
+	gap: 6px;
+	font-size: 0.9rem;
+}
+
+.tpp-accordion-panel .mpa-attribute-title {
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+	font-size: 0.75rem;
+}
+
+.tpp-accordion-panel .mpa-service-price {
+	font-family: 'Cormorant Garamond', serif;
+	font-size: 1.3rem;
+	margin-bottom: 10px;
+	text-transform: none;
+}
+
+.tpp-accordion-panel .mpa-price-title {
+	font-family: 'Montserrat', sans-serif;
+	font-size: 0.75rem;
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+	font-weight: 600;
+	margin-right: 4px;
+}
+
+/* Buttons */
+.tpp-see-more, 
+.mpa-actions .button,
+.button.mpa-time-period,
+.button.mpa-button-edit-or-remove,
+.wpcf7-form-control.wpcf7-submit {
+	display: inline-block;
+	margin-top: 18px;
+	padding: 8px 22px;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 0.8rem;
+	font-weight: 600;
+	letter-spacing: 0.05em;
+	text-transform: uppercase;
+	color: var(--blue-primary, #051b68);
+	border: 1px solid var(--gold, #C9A962);
+	border-radius: 30px;
+	text-decoration: none;
+	background-color: transparent;
+	transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.wpcf7-form-control.wpcf7-submit {
+	margin-top: 26px;
+}
+
+.tpp-see-more:hover, 
+.mpa-actions .button:hover,
+.button.mpa-time-period-selected,
+.wpcf7-form-control.wpcf7-submit:hover {
+	background: var(--gold, #C9A962);
+	color: white;
+}
+
+/* Reservation */
+.cell-value.mpa-service-name,
+.cell.reservation-title,
+.mpa-message {
+	text-transform: uppercase;
+}
+
+.mpa-shortcode-title {
+	font-size: 1.5em;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-weight: 600;
+}
+
+.mpa-shortcode-title.mpa-payment-gateways-title,
+.mpa-deposit-title {
+	font-size: 1.2em;
+	text-transform: uppercase;
+	font-weight: 600;
+}
+
+.mpa-deposit-title {
+	display: block;
+	border-bottom: 1px solid #000;
+	margin-bottom: 10px;
+}
+
+.mpa-times,
+.mpa-input-container,
+.mpa-input-wrapper,
+#booking-cal .appointment-form-shortcode .mpa-booking-step-period .mpa-time-wrapper .mpa-times {
+	overflow: visible;
+}
+
+.mpa-billing-details.mpa-checkout-section {
+	padding: 20px 0;
+	margin-top: 20px;
+	border-top: 1px solid #404040;
+}
+
+@media (max-width: 600px) {
+	.tpp-accordion-panel {
+		padding-left: 20px; /* drop the thumbnail-width indent on small screens */
+	}
+
+	.tpp-accordion-header .entry-title {
+		font-size: 1.5em;
+	}
+
+	.tpp-accordion-header .post-thumbnail img {
+		width: 88px;
+		height: 88px;
+	}
+
+	.tpp-accordion-header {
+		gap: 12px;
+		padding: 0px;
+	}
+
+	.mpa-services-list-shortcode .mpa-grid>.mpa-grid-column {
+		padding: 10px;
+	}
+
+	.wpcf7-form {
+		display: unset;
+	}
+}
